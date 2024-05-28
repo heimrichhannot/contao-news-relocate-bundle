@@ -1,0 +1,4 @@
+services:
+  HeimrichHannot\NewsRelocateBundle\EventListener\ParseArticlesListener:
+    autowire: true
+    autoconfigure: true
