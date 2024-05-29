@@ -1,22 +1,19 @@
-# Contao Ip Protection Bundle
+# Contao News Relocate Bundle.
 
-This bundle add an option to page settings to disable page protection based on ip address.
+This contao extension allows to relocate news articles, e.g. set a replacement article and force a redirect or pagerank transmission.
 
-![screenshot.png](docs%2Fimg%2Fscreenshot.png)
 
-## Usage
-
-### Install
+## Install
 
 Install with contao manager or with composer: 
 
 ```bash
-composer require heimrichhannot/contao-ip-protection-bundle
+composer require heimrichhannot/contao-news-relocate-bundle
 ```
 
 Update the database.
 
-### Setup
+## Usage
 
-Open the page you want to protect in the contao backend site structure and check "Protect page based on IP addresses".
-Add the ip addresses you want to allow access to the page.
+Go to the news article you want to relocate, select the relocate type and provide the relocate url.
+
