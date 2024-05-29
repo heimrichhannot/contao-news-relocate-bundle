@@ -22,18 +22,21 @@ $dca['subpalettes']['relocate_redirect'] = 'relocateUrl';
 
 $fields = [
     'relocate' => [
-        'label' => &$GLOBALS['TL_LANG']['tl_news']['relocate'],
         'inputType' => 'radio',
         'options' => array_column(Relocate::cases(), 'value'),
         'reference' => &$GLOBALS['TL_LANG']['tl_news']['reference']['relocate'],
         'exclude' => true,
-        'eval' => ['submitOnChange' => true, 'tl_class' => 'clr'],
+        'filter' => true,
+        'explanation' => 'relocate',
+        'eval' => [
+            'submitOnChange' => true,
+            'tl_class' => 'clr',
+            'helpwizard' => true,
+        ],
         'sql' => "varchar(12) NOT NULL default 'none'",
     ],
     'relocateUrl' => [
-        'label' => &$GLOBALS['TL_LANG']['tl_news']['relocateUrl'],
         'exclude' => true,
-        'search' => true,
         'inputType' => 'text',
         'eval' => ['rgxp' => 'url', 'decodeEntities' => true, 'maxlength' => 255, 'dcaPicker' => true, 'tl_class' => 'full wizard'],
         'sql' => "varchar(255) NOT NULL default ''",

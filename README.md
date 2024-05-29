@@ -30,11 +30,12 @@ Go to the news article you want to relocate, select the relocate type and provid
             <td>
                 The article will not be available anymore and calling the url will redirect to the provided relocate url.<br>
                 The article will not be indexed by the search indexer and will be removed from the sitemap.
+                The pagerank of the article get lost.
             </td>
         </tr>
         <tr>
             <td>redirect</td>
-            <td>The article is still available, but it's canonical url is set to the relocate url.</td>
+            <td>The article is still available, but it's canonical url is set to the relocate url, this should transfer the pagerank to the relocate url.</td>
         </tr>
 </table>
 
@@ -42,6 +43,6 @@ Go to the news article you want to relocate, select the relocate type and provid
 
 Following events are available:
 
-| Name                    | Description                                                                                               |
-|-------------------------|-----------------------------------------------------------------------------------------------------------|
-| GenerateArticleUrlEvent | Dispatched before the article url is search in the sitemap url list to be removed. Allows modify the url. |
+| Name                    | Description                                                                                                 |
+|-------------------------|-------------------------------------------------------------------------------------------------------------|
+| GenerateArticleUrlEvent | Dispatched before the article url is searched in the sitemap url list to be removed. Allows modify the url. |
