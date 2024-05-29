@@ -1,16 +1,19 @@
 <?php
 
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
+use HeimrichHannot\NewsRelocateBundle\News\Relocate;
 
 $dca = &$GLOBALS['TL_DCA']['tl_news'];
 
-PaletteManipulator::create()
-    ->addField('relocate', 'expert_legend', PaletteManipulator::POSITION_APPEND)
-    ->applyToPalette('default', 'tl_news')
-    ->applyToPalette('internal', 'tl_news')
-    ->applyToPalette('article', 'tl_news')
-    ->applyToPalette('external', 'tl_news')
-;
+$apply = function (PaletteManipulator $pm) {
+    $pm->applyToPalette('default', 'tl_news')
+        ->applyToPalette('internal', 'tl_news')
+        ->applyToPalette('article', 'tl_news')
+        ->applyToPalette('external', 'tl_news');
+};
+
+$apply(PaletteManipulator::create()->removeField('relocate'));
+$apply(PaletteManipulator::create()->addField('relocate', 'expert_legend', PaletteManipulator::POSITION_APPEND));
 
 $dca['palettes']['__selector__'][] = 'relocate';
 
@@ -21,11 +24,11 @@ $fields = [
     'relocate' => [
         'label' => &$GLOBALS['TL_LANG']['tl_news']['relocate'],
         'inputType' => 'radio',
-        'options' => ['none', 'deindex', 'redirect'],
+        'options' => array_column(Relocate::cases(), 'value'),
         'reference' => &$GLOBALS['TL_LANG']['tl_news']['reference']['relocate'],
         'exclude' => true,
+        'eval' => ['submitOnChange' => true, 'tl_class' => 'clr'],
         'sql' => "varchar(12) NOT NULL default 'none'",
-        'eval' => ['submitOnChange' => true],
     ],
     'relocateUrl' => [
         'label' => &$GLOBALS['TL_LANG']['tl_news']['relocateUrl'],
