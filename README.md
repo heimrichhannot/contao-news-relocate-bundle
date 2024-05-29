@@ -37,3 +37,11 @@ Go to the news article you want to relocate, select the relocate type and provid
             <td>The article is still available, but it's canonical url is set to the relocate url.</td>
         </tr>
 </table>
+
+## Developers
+
+Following events are available:
+
+| Name                    | Description                                                                                               |
+|-------------------------|-----------------------------------------------------------------------------------------------------------|
+| GenerateArticleUrlEvent | Dispatched before the article url is search in the sitemap url list to be removed. Allows modify the url. |
