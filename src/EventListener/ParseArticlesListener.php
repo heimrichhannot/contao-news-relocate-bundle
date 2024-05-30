@@ -9,9 +9,9 @@ use Contao\CoreBundle\Routing\ResponseContext\HtmlHeadBag\HtmlHeadBag;
 use Contao\CoreBundle\Routing\ResponseContext\ResponseContextAccessor;
 use Contao\FrontendTemplate;
 use Contao\Module;
+use Contao\ModuleNewsReader;
 use HeimrichHannot\NewsRelocateBundle\News\Relocate;
 use HeimrichHannot\UtilsBundle\Util\Utils;
-use ModuleNewsReader;
 
 #[AsHook('parseArticles', priority: 128)]
 class ParseArticlesListener
