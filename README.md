@@ -46,3 +46,9 @@ Following events are available:
 | Name                    | Description                                                                                                 |
 |-------------------------|-------------------------------------------------------------------------------------------------------------|
 | GenerateArticleUrlEvent | Dispatched before the article url is searched in the sitemap url list to be removed. Allows modify the url. |
+
+
+## Footnote
+
+Relocated news are currently not removed from news lists as the hooks to do such things are very limited. 
+You can filter them in your count and fetch items hook by adding `"tl_news.relocate = 'none'"` to the model columns array.
