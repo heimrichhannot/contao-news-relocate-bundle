@@ -16,8 +16,7 @@ class NewsArticleListener
 
     public function __construct(
         private readonly RequestStack $requestStack,
-    )
-    {
+    ) {
     }
 
     #[AsCallback(table: 'tl_news', target: 'config.onload')]

@@ -14,7 +14,6 @@ use Symfony\Component\Config\Loader\LoaderInterface;
 
 class Plugin implements BundlePluginInterface, ConfigPluginInterface
 {
-
     public function getBundles(ParserInterface $parser)
     {
         return [
@@ -24,7 +23,7 @@ class Plugin implements BundlePluginInterface, ConfigPluginInterface
                     ContaoNewsBundle::class,
                     'news_plus',
                     HeimrichHannotContaoNewsBundle::class,
-                ])
+                ]),
         ];
     }
 

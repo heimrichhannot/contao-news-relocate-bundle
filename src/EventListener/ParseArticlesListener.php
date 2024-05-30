@@ -20,8 +20,7 @@ class ParseArticlesListener
         private readonly InsertTagParser $insertTagParser,
         private readonly Utils $utils,
         private readonly ResponseContextAccessor $responseContextAccessor,
-    )
-    {
+    ) {
     }
 
     public function __invoke(FrontendTemplate $template, array $newsEntry, Module $module): void

@@ -10,9 +10,8 @@ class GenerateArticleUrlEvent extends Event
     public ?string $url = null;
 
     public function __construct(
-        public readonly PageModel$page,
+        public readonly PageModel $page,
         public readonly array $article,
-    )
-    {
+    ) {
     }
 }

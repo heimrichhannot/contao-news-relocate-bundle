@@ -15,8 +15,7 @@ class GetSearchablePagesListener
 {
     public function __construct(
         private readonly EventDispatcherInterface $eventDispatcher,
-    )
-    {
+    ) {
     }
 
     public function __invoke(array $pages, $rootId = 0, bool $isSitemap = false, string $language = null): array
